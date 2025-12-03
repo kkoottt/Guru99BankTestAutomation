@@ -127,46 +127,46 @@ public class NewCustomerForm extends ManagerHomePage{
     }
 
     public String getTextCustomerNameFieldError() {
-        return wait(customerNameFieldError,1);
+        return waitError(customerNameFieldError);
     }
 
     public String getTextDateOfBirthFieldErrorMessage() {
-        return wait(dateOfBirthFieldErrorMessage,1);
+        return waitError(dateOfBirthFieldErrorMessage);
     }
 
     public String getTextAddressFieldErrorMessage() {
-        return wait(addressFieldErrorMessage,1);
+        return waitError(addressFieldErrorMessage);
     }
 
     public String getTextCityFieldErrorMessage() {
-        return wait(cityFieldErrorMessage,1);
+        return waitError(cityFieldErrorMessage);
     }
 
     public String getTextStateFieldErrorMessage() {
-        return wait(stateFieldErrorMessage,1);
+        return waitError(stateFieldErrorMessage);
     }
 
     public String getTextPINFieldErrorMessage() {
-        return wait(PINFieldErrorMessage,1);
+        return waitError(PINFieldErrorMessage);
     }
 
     public String getTextMobileNumberFieldErrorMessage() {
-        return wait(mobileNumberFieldErrorMessage,1);
+        return waitError(mobileNumberFieldErrorMessage);
     }
 
     public String getTextEmailFieldErrorMessage() {
-        return wait(emailFieldErrorMessage,1);
+        return waitError(emailFieldErrorMessage);
     }
 
     public String getTextPasswordFieldErrorMessage() {
-        return wait(passwordFieldErrorMessage,1);
+        return waitError(passwordFieldErrorMessage);
     }
 
     public void clickSubmitBtn() {
-        driver.findElement(submitBtn).click();
+        click(submitBtn);
     }
 
     public void clickResetBtn() {
-        driver.findElement(resetBtn).click();
+        click(resetBtn);
     }
 }

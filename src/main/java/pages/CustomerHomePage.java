@@ -12,26 +12,26 @@ public class CustomerHomePage extends BasePage {
 
     // Actions
     public void clickBalanceEnquiry() {
-        driver.findElement(balanceEnquiryBtn).click();
+        click(balanceEnquiryBtn);
     }
 
     public void clickFundTransfer() {
-        driver.findElement(fundTransferBtn).click();
+        click(fundTransferBtn);
     }
 
     public void clickChangePassword() {
-        driver.findElement(changePasswordBtn).click();
+        click(changePasswordBtn);
     }
 
     public void clickMiniStatement() {
-        driver.findElement(miniStatementBtn).click();
+        click(miniStatementBtn);
     }
 
     public void clickCustomisedStatement() {
-        driver.findElement(customisedStatementBtn).click();
+        click(customisedStatementBtn);
     }
 
     public void clickLogout() {
-        driver.findElement(logoutBtn).click();
+        click(logoutBtn);
     }
 }

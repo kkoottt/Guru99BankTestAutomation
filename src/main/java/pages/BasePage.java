@@ -25,17 +25,21 @@ public class BasePage {
     protected By logoutBtn = By.xpath("//a[contains(text(),'Log out')]");
 
     protected WebDriver driver;
+    private WebDriverWait wait;
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
-    protected String wait(By locator, int timeoutSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
-
+    protected String waitError(By locator) {
         wait.until(ExpectedConditions.not(
                 ExpectedConditions.textToBe(locator, "")
         ));
 
         return driver.findElement(locator).getText();
+    }
+
+    protected void click(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 }

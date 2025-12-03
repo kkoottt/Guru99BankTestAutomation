@@ -11,14 +11,12 @@ import org.testng.asserts.SoftAssert;
 import pages.NewCustomerForm;
 
 public class NewCustomerFormTests extends BaseTest {
-    private SoftAssert soft;
 
     @BeforeMethod
     public void openNewCustomerForm() {
         loginAsManager();
         managerHomePage.clickNewCustomerBtn();
         newCustomerForm = new NewCustomerForm(driver);
-        soft = new SoftAssert();
     }
 
     @Test(dataProvider = "invalidCustomerNameInputs", dataProviderClass = NewCustomerFormTestsData.class)

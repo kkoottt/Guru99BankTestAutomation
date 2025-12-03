@@ -15,45 +15,45 @@ public class ManagerHomePage extends BasePage {
 
     // Actions
     public void clickNewCustomerBtn() {
-        driver.findElement(newCustomerBtn).click();
+        click(newCustomerBtn);
     }
     public void clickEditCustomerBtn() {
-        driver.findElement(editCustomerBtn).click();
+        click(editCustomerBtn);
     }
     public void clickDeleteCustomerBtn() {
-        driver.findElement(deleteCustomerBtn).click();
+        click(deleteCustomerBtn);
     }
     public void clickNewAccountBtn() {
-        driver.findElement(newAccountBtn).click();
+        click(newAccountBtn);
     }
     public void clickEditAccountBtn() {
-        driver.findElement(editAccountBtn).click();
+        click(editAccountBtn);
     }
     public void clickDeleteAccountBtn() {
-        driver.findElement(deleteAccountBtn).click();
+        click(deleteAccountBtn);
     }
     public void clickDepositBtn() {
-        driver.findElement(depositBtn).click();
+        click(depositBtn);
     }
     public void clickWithdrawalBtn() {
-        driver.findElement(withdrawalBtn).click();
+        click(withdrawalBtn);
     }
     public void clickFundTransferBtn() {
-        driver.findElement(fundTransferBtn).click();
+        click(fundTransferBtn);
     }
     public void clickChangePasswordBtn() {
-        driver.findElement(changePasswordBtn).click();
+        click(changePasswordBtn);
     }
     public void clickBalanceEnquiryBtn() {
-        driver.findElement(balanceEnquiryBtn).click();
+        click(balanceEnquiryBtn);
     }
     public void clickMiniStatementBtn() {
-        driver.findElement(miniStatementBtn).click();
+        click(miniStatementBtn);
     }
     public void clickCustomisedStatementBtn() {
-        driver.findElement(customisedStatementBtn).click();
+        click(customisedStatementBtn);
     }
     public void clickLogoutBtn() {
-        driver.findElement(logoutBtn).click();
+        click(logoutBtn);
     }
 }

@@ -7,10 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.CustomerHomePage;
-import pages.LoginPage;
-import pages.ManagerHomePage;
-import pages.NewCustomerForm;
+import org.testng.asserts.SoftAssert;
+import pages.*;
 import utils.AlertHelper;
 
 import java.time.Duration;
@@ -20,9 +18,11 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected ManagerHomePage managerHomePage;
     protected NewCustomerForm newCustomerForm;
+    protected EditCustomerForm editCustomerForm;
     protected CustomerHomePage customerHomePage;
     protected AlertHelper alertHelper;
     protected WebDriverWait wait;
+    protected SoftAssert soft;
 
     @BeforeMethod
     public void setup() {
@@ -31,6 +31,7 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         alertHelper = new AlertHelper(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        soft = new SoftAssert();
     }
 
     @AfterMethod
