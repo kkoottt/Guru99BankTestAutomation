@@ -36,55 +36,77 @@ public class NewCustomerForm extends ManagerHomePage{
     }
 
     // Actions
-    public void enterCustomerNameField(String customerName) {
+    public NewCustomerForm enterCustomerNameField(String customerName) {
         waitElement(customerNameField).clear();
         driver.findElement(customerNameField).sendKeys(customerName);
+
+        return this;
     }
 
-    public void selectMaleRadioBtn() {
+    public NewCustomerForm selectMaleRadioBtn() {
         WebElement rbMale = driver.findElement(maleRadioBtn);
         if (!rbMale.isSelected()) {
             rbMale.click();
         }
+
+        return this;
     }
 
-    public void selectFemaleRadioBtn() {
+    public NewCustomerForm selectFemaleRadioBtn() {
         WebElement rbFemale = driver.findElement(femaleRadioBtn);
         if (!rbFemale.isSelected()) {
             rbFemale.click();
         }
+
+        return this;
     }
 
-    public void enterDateOfBirthField(String input) {
+    public NewCustomerForm enterDateOfBirthField(String input) {
         waitElement(dateOfBirthField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterAddressField(String input) {
+    public NewCustomerForm enterAddressField(String input) {
         waitElement(addressField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterCityField(String input) {
+    public NewCustomerForm enterCityField(String input) {
         waitElement(cityField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterStateField(String input) {
+    public NewCustomerForm enterStateField(String input) {
         waitElement(stateField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterPINField(String input) {
+    public NewCustomerForm enterPINField(String input) {
         waitElement(PINField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterMobileNumberField(String input) {
+    public NewCustomerForm enterMobileNumberField(String input) {
         waitElement(mobileNumberField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterEmailField(String input) {
+    public NewCustomerForm enterEmailField(String input) {
         waitElement(emailField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterPasswordField(String input) {
+    public NewCustomerForm enterPasswordField(String input) {
         waitElement(passwordField).sendKeys(input);
+
+        return this;
     }
 
     public String getTextCustomerNameField() {

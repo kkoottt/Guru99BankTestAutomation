@@ -15,6 +15,7 @@ public class LoginToHomePage extends BaseTest {
         loginAsManager();
 
         String expectedURL = "https://demo.guru99.com/V4/manager/Managerhomepage.php";
+        waitURL(expectedURL);
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL, "Valid Manager Login Unsuccessful.");
     }
 
@@ -23,9 +24,7 @@ public class LoginToHomePage extends BaseTest {
         loginAsCustomer();
 
         String expectedURL = "https://demo.guru99.com/V4/customer/Customerhomepage.php";
-
-        wait.until(ExpectedConditions.urlToBe(expectedURL));
-
+        waitURL(expectedURL);
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL, "Valid Customer Login Unsuccessful.");
     }
 }

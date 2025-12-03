@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.NewCustomerForm;
 
 public class NewCustomerFormTests extends BaseTest {
+    protected NewCustomerForm newCustomerForm;
 
     @BeforeMethod
     public void openNewCustomerForm() {

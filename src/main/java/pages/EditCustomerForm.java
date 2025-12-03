@@ -16,8 +16,9 @@ public class EditCustomerForm extends ManagerHomePage {
     }
 
     // Actions
-    public void enterCustomerIDField(String input) {
+    public EditCustomerForm enterCustomerIDField(String input) {
         waitElement(customerIDField).sendKeys(input);
+        return this;
     }
 
     public String getTextCustomerIDField() {

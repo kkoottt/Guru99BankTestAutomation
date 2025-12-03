@@ -12,15 +12,13 @@ public class EditCustomerPageTests extends BaseTest {
 
     @BeforeMethod
     public void openEditCustomerForm() {
-        // login as manager
         loginAsManager();
-        // click edit customer
-        managerHomePage.clickEditCustomerBtn();
-        EditCustomerForm editCustomerForm = new EditCustomerForm(driver);
-        // enter customer in form
-        editCustomerForm.enterCustomerIDField("61318");
-        editCustomerForm.clickSubmitBtn();
-        editCustomerPage = new EditCustomerPage(driver);
+        managerHomePage.clickEditCustomerBtn()
+                .enterCustomerIDField("61318")
+                .clickSubmitBtn();
+
+        editCustomerPage = new EditCustomerPage(driver)
+                .saveInfo();
     }
 
     // validate fields in page
@@ -105,5 +103,20 @@ public class EditCustomerPageTests extends BaseTest {
 
         soft.assertEquals(actualError, expectedError);
         soft.assertAll();
+    }
+
+    // Reset button works
+    @Test
+    public void resetButtonResetsFields() {
+        editCustomerPage.enterAddressField("")
+                        .enterCityField("")
+                        .enterStateField("")
+                        .enterPINField("")
+                        .enterMobileNumberField("")
+                        .enterEmailField("");
+
+        editCustomerPage.clickResetBtn();
+
+        soft.assertTrue(editCustomerPage.isResetSuccessful());
     }
 }

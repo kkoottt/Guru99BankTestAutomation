@@ -33,6 +33,27 @@ public class EditCustomerPage extends EditCustomerForm {
     }
 
     // Actions
+    private String address, city, state, PIN, mobileNumber, email;
+    public EditCustomerPage saveInfo() {
+        this.address = getTextAddressField();
+        this.city = getTextCityField();
+        this.state = getTextStateField();
+        this.PIN = getTextPINField();
+        this.mobileNumber = getTextMobileNumberField();
+        this.email = getTextEmailField();
+
+        return this;
+    }
+
+    public boolean isResetSuccessful() {
+        return address.equals(getTextAddressField()) &&
+                city.equals(getTextCityField()) &&
+                state.equals(getTextStateField()) &&
+                PIN.equals(getTextPINField()) &&
+                mobileNumber.equals(getTextMobileNumberField()) &&
+                email.equals(getTextEmailField());
+    }
+
     public boolean isCustomerNameFieldDisabled() {
         return isDisabled(customerNameField);
     }
@@ -45,34 +66,46 @@ public class EditCustomerPage extends EditCustomerForm {
         return isDisabled(dateOfBirthField);
     }
 
-    public void enterAddressField(String input) {
+    public EditCustomerPage enterAddressField(String input) {
         waitElement(addressField).clear();
         driver.findElement(addressField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterCityField(String input) {
+    public EditCustomerPage enterCityField(String input) {
         waitElement(cityField).clear();
         driver.findElement(cityField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterStateField(String input) {
+    public EditCustomerPage enterStateField(String input) {
         waitElement(stateField).clear();
         driver.findElement(stateField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterPINField(String input) {
+    public EditCustomerPage enterPINField(String input) {
         waitElement(PINField).clear();
         driver.findElement(PINField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterMobileNumberField(String input) {
+    public EditCustomerPage enterMobileNumberField(String input) {
         waitElement(mobileNumberField).clear();
         driver.findElement(mobileNumberField).sendKeys(input);
+
+        return this;
     }
 
-    public void enterEmailField(String input) {
+    public EditCustomerPage enterEmailField(String input) {
         waitElement(emailField).clear();
         driver.findElement(emailField).sendKeys(input);
+
+        return this;
     }
 
     public String getTextAddressField() {

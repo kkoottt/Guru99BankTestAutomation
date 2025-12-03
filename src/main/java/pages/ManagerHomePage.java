@@ -17,8 +17,9 @@ public class ManagerHomePage extends BasePage {
     public void clickNewCustomerBtn() {
         click(newCustomerBtn);
     }
-    public void clickEditCustomerBtn() {
+    public EditCustomerForm clickEditCustomerBtn() {
         click(editCustomerBtn);
+        return new EditCustomerForm(driver);
     }
     public void clickDeleteCustomerBtn() {
         click(deleteCustomerBtn);

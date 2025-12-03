@@ -19,12 +19,16 @@ public class LoginPage {
     }
 
     // Actions (enterUserID, enterPassword, clickLogin, clickReset, getUserID, getPassword)
-    public void enterUserID(String userID) {
+    public LoginPage enterUserID(String userID) {
         driver.findElement(userIDField).sendKeys(userID);
+
+        return this;
     }
 
-    public void enterPassword(String password) {
+    public LoginPage enterPassword(String password) {
         driver.findElement(passwordField).sendKeys(password);
+
+        return this;
     }
 
     public void clickLogin() {
