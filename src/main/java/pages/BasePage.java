@@ -42,4 +42,8 @@ public class BasePage {
     protected void click(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
+
+    protected boolean isDisabled(By locator) {
+        return !driver.findElement(locator).isEnabled();
+    }
 }
