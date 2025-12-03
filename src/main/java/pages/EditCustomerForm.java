@@ -17,7 +17,7 @@ public class EditCustomerForm extends ManagerHomePage {
 
     // Actions
     public void enterCustomerIDField(String input) {
-        driver.findElement(customerIDField).sendKeys(input);
+        waitElement(customerIDField).sendKeys(input);
     }
 
     public String getTextCustomerIDField() {
@@ -25,7 +25,7 @@ public class EditCustomerForm extends ManagerHomePage {
     }
 
     public String getTextCustomerIDFieldErrorMessage() {
-        return waitError(customerIDFieldErrorMessage);
+        return waitThenGetError(customerIDFieldErrorMessage);
     }
 
     public void clickSubmitBtn() {

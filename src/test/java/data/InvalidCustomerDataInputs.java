@@ -2,7 +2,7 @@ package data;
 
 import org.testng.annotations.DataProvider;
 
-public class NewCustomerFormTestsData {
+public class InvalidCustomerDataInputs {
 
     @DataProvider(name = "invalidCustomerNameInputs")
     public Object[][] invalidCustomerInputs() {

@@ -14,7 +14,7 @@ public class EditCustomerPage extends EditCustomerForm {
     private final By cityField = By.xpath("//input[@type='text' and @name='city']");
     private final By stateField = By.xpath("//input[@type='text' and @name='state']");
     private final By PINField = By.xpath("//input[@type='text' and @name='pinno']");
-    private final By mobileNumberField = By.xpath("//input[@type='text' and @name='telephone']");
+    private final By mobileNumberField = By.xpath("//input[@type='text' and @name='telephoneno']");
     private final By emailField = By.xpath("//input[@type='text' and @name='emailid']");
     // Error Messages
     private final By addressFieldErrorMessage = By.xpath("//label[@id='message3']");
@@ -46,74 +46,88 @@ public class EditCustomerPage extends EditCustomerForm {
     }
 
     public void enterAddressField(String input) {
+        waitElement(addressField).clear();
         driver.findElement(addressField).sendKeys(input);
     }
 
     public void enterCityField(String input) {
+        waitElement(cityField).clear();
         driver.findElement(cityField).sendKeys(input);
     }
 
     public void enterStateField(String input) {
+        waitElement(stateField).clear();
         driver.findElement(stateField).sendKeys(input);
     }
 
     public void enterPINField(String input) {
+        waitElement(PINField).clear();
         driver.findElement(PINField).sendKeys(input);
     }
 
     public void enterMobileNumberField(String input) {
+        waitElement(mobileNumberField).clear();
         driver.findElement(mobileNumberField).sendKeys(input);
     }
 
     public void enterEmailField(String input) {
+        waitElement(emailField).clear();
         driver.findElement(emailField).sendKeys(input);
     }
 
     public String getTextAddressField() {
-        return driver.findElement(addressField).getText();
+        return driver.findElement(addressField).getAttribute("value");
     }
 
     public String getTextCityField() {
-        return driver.findElement(cityField).getText();
+        return driver.findElement(cityField).getAttribute("value");
     }
 
     public String getTextStateField() {
-        return driver.findElement(stateField).getText();
+        return driver.findElement(stateField).getAttribute("value");
     }
 
     public String getTextPINField() {
-        return driver.findElement(PINField).getText();
+        return driver.findElement(PINField).getAttribute("value");
     }
 
     public String getTextMobileNumberField() {
-        return driver.findElement(mobileNumberField).getText();
+        return driver.findElement(mobileNumberField).getAttribute("value");
     }
 
     public String getTextEmailField() {
-        return driver.findElement(emailField).getText();
+        return driver.findElement(emailField).getAttribute("value");
     }
 
     public String getTextAddressFieldErrorMessage() {
-        return waitError(addressFieldErrorMessage);
+        return waitThenGetError(addressFieldErrorMessage);
     }
 
     public String getTextCityFieldErrorMessage() {
-        return waitError(cityFieldErrorMessage);
+        return waitThenGetError(cityFieldErrorMessage);
     }
 
     public String getTextStateFieldErrorMessage() {
-        return waitError(stateFieldErrorMessage);
+        return waitThenGetError(stateFieldErrorMessage);
     }
 
     public String getTextPINFieldErrorMessage() {
-        return waitError(PINFieldErrorMessage);
+        return waitThenGetError(PINFieldErrorMessage);
     }
 
     public String getTextMobileNumberFieldErrorMessage() {
-        return waitError(mobileNumberFieldErrorMessage);
+        return waitThenGetError(mobileNumberFieldErrorMessage);
     }
 
     public String getTextEmailFieldErrorMessage() {
-        return waitError(emailFieldErrorMessage);
+        return waitThenGetError(emailFieldErrorMessage);
+    }
+
+    public void clickSubmitBtn() {
+        driver.findElement(submitBtn).click();
+    }
+
+    public void clickResetBtn() {
+        driver.findElement(resetBtn).click();
     }
 }

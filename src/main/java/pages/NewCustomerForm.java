@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class NewCustomerForm extends ManagerHomePage{
+
     // Locators
     private final By customerNameField = By.xpath("//body/table[@class='layout']/tbody/tr/td[@colspan='2']/table[@border='0']/tbody/tr[4]/td[2]/input[1]");
     private final By maleRadioBtn = By.xpath("//body/table[@class='layout']/tbody/tr/td[@colspan='2']/table[@border='0']/tbody/tr[5]/td[2]/input[1]");
@@ -28,6 +29,7 @@ public class NewCustomerForm extends ManagerHomePage{
     private final By passwordFieldErrorMessage = By.xpath("//label[@id='message18']");
     private final By submitBtn = By.xpath("//input[@type='submit']");
     private final By resetBtn = By.xpath("//input[@type='reset']");
+
     // Constructor
     public NewCustomerForm(WebDriver driver) {
         super(driver);
@@ -35,9 +37,8 @@ public class NewCustomerForm extends ManagerHomePage{
 
     // Actions
     public void enterCustomerNameField(String customerName) {
-        WebElement tfCustName = driver.findElement(customerNameField);
-        tfCustName.clear();
-        tfCustName.sendKeys(customerName);
+        waitElement(customerNameField).clear();
+        driver.findElement(customerNameField).sendKeys(customerName);
     }
 
     public void selectMaleRadioBtn() {
@@ -55,35 +56,35 @@ public class NewCustomerForm extends ManagerHomePage{
     }
 
     public void enterDateOfBirthField(String input) {
-        driver.findElement(dateOfBirthField).sendKeys(input);
+        waitElement(dateOfBirthField).sendKeys(input);
     }
 
     public void enterAddressField(String input) {
-        driver.findElement(addressField).sendKeys(input);
+        waitElement(addressField).sendKeys(input);
     }
 
     public void enterCityField(String input) {
-        driver.findElement(cityField).sendKeys(input);
+        waitElement(cityField).sendKeys(input);
     }
 
     public void enterStateField(String input) {
-        driver.findElement(stateField).sendKeys(input);
+        waitElement(stateField).sendKeys(input);
     }
 
     public void enterPINField(String input) {
-        driver.findElement(PINField).sendKeys(input);
+        waitElement(PINField).sendKeys(input);
     }
 
     public void enterMobileNumberField(String input) {
-        driver.findElement(mobileNumberField).sendKeys(input);
+        waitElement(mobileNumberField).sendKeys(input);
     }
 
     public void enterEmailField(String input) {
-        driver.findElement(emailField).sendKeys(input);
+        waitElement(emailField).sendKeys(input);
     }
 
     public void enterPasswordField(String input) {
-        driver.findElement(passwordField).sendKeys(input);
+        waitElement(passwordField).sendKeys(input);
     }
 
     public String getTextCustomerNameField() {
@@ -127,39 +128,39 @@ public class NewCustomerForm extends ManagerHomePage{
     }
 
     public String getTextCustomerNameFieldError() {
-        return waitError(customerNameFieldError);
+        return waitThenGetError(customerNameFieldError);
     }
 
     public String getTextDateOfBirthFieldErrorMessage() {
-        return waitError(dateOfBirthFieldErrorMessage);
+        return waitThenGetError(dateOfBirthFieldErrorMessage);
     }
 
     public String getTextAddressFieldErrorMessage() {
-        return waitError(addressFieldErrorMessage);
+        return waitThenGetError(addressFieldErrorMessage);
     }
 
     public String getTextCityFieldErrorMessage() {
-        return waitError(cityFieldErrorMessage);
+        return waitThenGetError(cityFieldErrorMessage);
     }
 
     public String getTextStateFieldErrorMessage() {
-        return waitError(stateFieldErrorMessage);
+        return waitThenGetError(stateFieldErrorMessage);
     }
 
     public String getTextPINFieldErrorMessage() {
-        return waitError(PINFieldErrorMessage);
+        return waitThenGetError(PINFieldErrorMessage);
     }
 
     public String getTextMobileNumberFieldErrorMessage() {
-        return waitError(mobileNumberFieldErrorMessage);
+        return waitThenGetError(mobileNumberFieldErrorMessage);
     }
 
     public String getTextEmailFieldErrorMessage() {
-        return waitError(emailFieldErrorMessage);
+        return waitThenGetError(emailFieldErrorMessage);
     }
 
     public String getTextPasswordFieldErrorMessage() {
-        return waitError(passwordFieldErrorMessage);
+        return waitThenGetError(passwordFieldErrorMessage);
     }
 
     public void clickSubmitBtn() {

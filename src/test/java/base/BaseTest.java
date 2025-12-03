@@ -18,7 +18,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected ManagerHomePage managerHomePage;
     protected NewCustomerForm newCustomerForm;
-    protected EditCustomerForm editCustomerForm;
+    protected EditCustomerPage editCustomerPage;
     protected CustomerHomePage customerHomePage;
     protected AlertHelper alertHelper;
     protected WebDriverWait wait;

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.EditCustomerForm;
 
 public class EditCustomerFormTests extends BaseTest {
-
+    private EditCustomerForm editCustomerForm;
     @BeforeMethod
     public void openEditCustomerForm() {
         loginAsManager();
