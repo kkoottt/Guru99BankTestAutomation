@@ -1,10 +1,9 @@
 package pagesTests;
 
 import base.BaseTest;
-import data.InvalidCustomerDataInputs;
+import data.InvalidDataInputs;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.EditCustomerForm;
 import pages.EditCustomerPage;
 
 public class EditCustomerPageTests extends BaseTest {
@@ -40,7 +39,7 @@ public class EditCustomerPageTests extends BaseTest {
         soft.assertAll();
     }
 
-    @Test(dataProvider = "invalidAddressInputs", dataProviderClass = InvalidCustomerDataInputs.class)
+    @Test(dataProvider = "invalidAddressInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateAddressInput(String input, String expectedError) {
         editCustomerPage.enterAddressField(input);
         tab();
@@ -51,7 +50,7 @@ public class EditCustomerPageTests extends BaseTest {
         soft.assertAll();
     }
 
-    @Test(dataProvider = "invalidCityInputs", dataProviderClass = InvalidCustomerDataInputs.class)
+    @Test(dataProvider = "invalidCityInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateCityInput(String input, String expectedError) {
         editCustomerPage.enterCityField(input);
         tab();
@@ -61,7 +60,7 @@ public class EditCustomerPageTests extends BaseTest {
         soft.assertAll();
     }
 
-    @Test(dataProvider = "invalidStateInputs", dataProviderClass = InvalidCustomerDataInputs.class)
+    @Test(dataProvider = "invalidStateInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateStateInput(String input, String expectedError) {
         editCustomerPage.enterStateField(input);
         tab();
@@ -72,7 +71,7 @@ public class EditCustomerPageTests extends BaseTest {
         soft.assertAll();
     }
 
-    @Test(dataProvider = "invalidPINInputs", dataProviderClass = InvalidCustomerDataInputs.class)
+    @Test(dataProvider = "invalidPINInputs", dataProviderClass = InvalidDataInputs.class)
     public void validatePINInput(String input, String expectedError) {
         editCustomerPage.enterPINField(input);
         tab();
@@ -83,7 +82,7 @@ public class EditCustomerPageTests extends BaseTest {
         soft.assertAll();
     }
 
-    @Test(dataProvider = "invalidMobileNumberInputs", dataProviderClass = InvalidCustomerDataInputs.class)
+    @Test(dataProvider = "invalidMobileNumberInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateMobileNumberInput(String input, String expectedError) {
         editCustomerPage.enterMobileNumberField(input);
         tab();
@@ -94,7 +93,7 @@ public class EditCustomerPageTests extends BaseTest {
         soft.assertAll();
     }
 
-    @Test(dataProvider = "invalidEmailInputs", dataProviderClass = InvalidCustomerDataInputs.class)
+    @Test(dataProvider = "invalidEmailInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateEmailInput(String input, String expectedError) {
         editCustomerPage.enterEmailField(input);
         tab();

@@ -1,6 +1,7 @@
 package pagesTests;
 
 import base.BaseTest;
+import data.InvalidDataInputs;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -15,23 +16,7 @@ public class EditAccountFormTests extends BaseTest {
         editAccountForm = new EditAccountForm(driver);
     }
 
-    @DataProvider(name = "invalidAccountNumberInputs")
-    public Object[][] invalidAccountNumberInputs() {
-        return new Object[][] {
-                {"", "Account Number must not be blank"},
-                {"@123123", "Special characters are not allowed"},
-                {"!@#", "Special characters are not allowed"},
-                {"123#123", "Special characters are not allowed"},
-                {"123123!", "Special characters are not allowed"},
-                {"Accountnumber", "Characters are not allowed"},
-                {"number123", "Characters are not allowed"},
-                {"123number", "Characters are not allowed"},
-                {" ", "First character can not have space"},
-                {" 123123", "First character can not have space"}
-        };
-    }
-
-    @Test(dataProvider = "invalidAccountNumberInputs")
+    @Test(dataProvider = "invalidAccountNumberInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateAccountNumberInput(String input, String expectedResult) {
         editAccountForm.enterAccountNumberField(input);
         tab();

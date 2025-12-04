@@ -1,12 +1,15 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.management.RuntimeErrorException;
+import java.sql.Time;
 import java.time.Duration;
 
 public class BasePage {
@@ -35,15 +38,23 @@ public class BasePage {
     }
 
     protected String waitThenGetError(By locator) {
-        wait.until(ExpectedConditions.not(
-                ExpectedConditions.textToBe(locator, "")
-        ));
+        try {
+            wait.until(ExpectedConditions.not(
+                    ExpectedConditions.textToBe(locator, "")
+            ));
 
-        return driver.findElement(locator).getText();
+            return driver.findElement(locator).getText();
+        } catch (TimeoutException e) {
+            return "";
+        }
     }
 
     protected WebElement waitElement(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        } catch (TimeoutException e) {
+            throw new RuntimeException("Element not found: " + locator.toString());
+        }
     }
 
     protected void click(By locator) {

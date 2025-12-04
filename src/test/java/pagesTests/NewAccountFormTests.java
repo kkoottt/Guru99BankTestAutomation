@@ -1,9 +1,8 @@
 package pagesTests;
 
 import base.BaseTest;
-import data.invalidAccountDataInputs;
+import data.InvalidDataInputs;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.NewAccountForm;
 
@@ -17,7 +16,7 @@ public class NewAccountFormTests extends BaseTest {
         newAccountForm = new NewAccountForm(driver);
     }
 
-    @Test(dataProvider = "invalidCustomerIDInputs", dataProviderClass = invalidAccountDataInputs.class)
+    @Test(dataProvider = "invalidCustomerIDInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateCustomerIDInput(String input, String expectedError) {
         newAccountForm.enterCustomerIDField(input);
         tab();
@@ -27,7 +26,7 @@ public class NewAccountFormTests extends BaseTest {
         soft.assertAll();
     }
 
-    @Test(dataProvider = "invalidInitialDepositInputs", dataProviderClass = invalidAccountDataInputs.class)
+    @Test(dataProvider = "invalidInitialDepositInputs", dataProviderClass = InvalidDataInputs.class)
     public void validateInitialDepositInput(String input, String expectedError) {
         newAccountForm.enterInitialDepositField(input);
         tab();
