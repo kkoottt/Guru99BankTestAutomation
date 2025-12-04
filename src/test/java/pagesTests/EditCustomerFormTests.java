@@ -40,4 +40,13 @@ public class EditCustomerFormTests extends BaseTest {
         soft.assertEquals(actualResult, expectedResult);
         soft.assertAll();
     }
+
+    @Test
+    public void resetBtnClearsAllField() {
+        editCustomerForm.enterCustomerIDField("123123123")
+                .clickResetBtn();
+
+        String customerID = editCustomerForm.getTextCustomerIDField();
+        soft.assertEquals(customerID, "");
+    }
 }
