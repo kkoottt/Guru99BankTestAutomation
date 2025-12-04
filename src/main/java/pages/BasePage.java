@@ -11,21 +11,22 @@ import java.time.Duration;
 
 public class BasePage {
     // Locators
-    protected By newCustomerBtn = By.xpath("//a[contains(text(),'New Customer')]");
-    protected By editCustomerBtn = By.xpath("//a[contains(text(),'Edit Customer')]");
-    protected By deleteCustomerBtn = By.xpath("//a[@href='DeleteCustomerInput.php']");
-    protected By newAccountBtn = By.xpath("//a[contains(text(),'New Account')]");
-    protected By editAccountBtn = By.xpath("//a[contains(text(),'Edit Account')]");
-    protected By deleteAccountBtn = By.xpath("//a[contains(text(),'Delete Account')]");
-    protected By depositBtn = By.xpath("//a[contains(text(),'Deposit')]");
-    protected By withdrawalBtn = By.xpath("//a[contains(text(),'Withdrawal')]");
-    protected By fundTransferBtn = By.xpath("//a[contains(text(),'Fund Transfer')]");
-    protected By changePasswordBtn = By.xpath("//a[contains(text(),'Change Password')]");
-    protected By balanceEnquiryBtn = By.xpath("//a[contains(text(),'Balance Enquiry')]");
-    protected By miniStatementBtn = By.xpath("//a[contains(text(),'Mini Statement')]");
-    protected By customisedStatementBtn = By.xpath("//a[contains(text(),'Customised Statement')]");
-    protected By logoutBtn = By.xpath("//a[contains(text(),'Log out')]");
-
+    protected final By newCustomerBtn = By.xpath("//a[contains(text(),'New Customer')]");
+    protected final By editCustomerBtn = By.xpath("//a[contains(text(),'Edit Customer')]");
+    protected final By deleteCustomerBtn = By.xpath("//a[@href='DeleteCustomerInput.php']");
+    protected final By newAccountBtn = By.xpath("//a[contains(text(),'New Account')]");
+    protected final By editAccountBtn = By.xpath("//a[contains(text(),'Edit Account')]");
+    protected final By deleteAccountBtn = By.xpath("//a[contains(text(),'Delete Account')]");
+    protected final By depositBtn = By.xpath("//a[contains(text(),'Deposit')]");
+    protected final By withdrawalBtn = By.xpath("//a[contains(text(),'Withdrawal')]");
+    protected final By fundTransferBtn = By.xpath("//a[contains(text(),'Fund Transfer')]");
+    protected final By changePasswordBtn = By.xpath("//a[contains(text(),'Change Password')]");
+    protected final By balanceEnquiryBtn = By.xpath("//a[contains(text(),'Balance Enquiry')]");
+    protected final By miniStatementBtn = By.xpath("//a[contains(text(),'Mini Statement')]");
+    protected final By customisedStatementBtn = By.xpath("//a[contains(text(),'Customised Statement')]");
+    protected final By logoutBtn = By.xpath("//a[contains(text(),'Log out')]");
+    protected final By submitBtn = By.xpath("//input[@type='submit']");
+    protected final By resetBtn = By.xpath("//input[@type='reset']");
     protected WebDriver driver;
     private WebDriverWait wait;
     public BasePage(WebDriver driver) {

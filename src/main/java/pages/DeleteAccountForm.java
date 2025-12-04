@@ -3,18 +3,18 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class EditAccountForm extends BasePage {
+public class DeleteAccountForm extends BasePage {
     // Selectors
     private final By accountNumberField = By.xpath("//input[@type='text']");
     private final By accountNumberFieldErrorMessage = By.xpath("//label[@id='message2']");
 
     // Constructor
-    public EditAccountForm(WebDriver driver) {
+    public DeleteAccountForm(WebDriver driver) {
         super(driver);
     }
 
     // Actions
-    public EditAccountForm enterAccountNumberField(String input) {
+    public DeleteAccountForm enterAccountNumberField(String input) {
         waitElement(accountNumberField).sendKeys(input);
         return this;
     }

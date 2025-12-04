@@ -23,9 +23,6 @@ public class EditCustomerPage extends EditCustomerForm {
     private final By PINFieldErrorMessage = By.xpath("//label[@id='message6']");
     private final By mobileNumberFieldErrorMessage = By.xpath("//label[@id='message7']");
     private final By emailFieldErrorMessage = By.xpath("//label[@id='message9']");
-    // Buttons
-    private final By submitBtn = By.xpath("//input[@type='submit']");
-    private final By resetBtn = By.xpath("//input[@type='reset']");
 
     // Constructors
     public EditCustomerPage(WebDriver driver) {

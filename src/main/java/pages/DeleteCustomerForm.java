@@ -3,18 +3,18 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class EditCustomerForm extends ManagerHomePage {
+public class DeleteCustomerForm extends BasePage {
     // Selectors
     private final By customerIDField = By.xpath("//input[@type='text']");
     private final By customerIDFieldErrorMessage = By.xpath("//label[@id='message14']");
 
     // Constructor
-    public EditCustomerForm(WebDriver driver) {
+    public DeleteCustomerForm(WebDriver driver) {
         super(driver);
     }
 
     // Actions
-    public EditCustomerForm enterCustomerIDField(String input) {
+    public DeleteCustomerForm enterCustomerIDField(String input) {
         waitElement(customerIDField).sendKeys(input);
         return this;
     }

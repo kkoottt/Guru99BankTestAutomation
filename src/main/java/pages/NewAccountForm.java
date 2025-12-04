@@ -11,8 +11,6 @@ public class NewAccountForm extends ManagerHomePage{
     private final By initialDepositField = By.xpath("//input[@type='text' and @name='inideposit']");
     private final By customerIDFieldErrorMessage = By.xpath("//label[@id='message14']");
     private final By initialDepositFieldErrorMessage = By.xpath("//label[@id='message19']");
-    private final By submitBtn = By.xpath("//input[@type='submit']");
-    private final By resetBtn = By.xpath("//input[@type='reset']");
 
     // Constructor
     public NewAccountForm(WebDriver driver) {

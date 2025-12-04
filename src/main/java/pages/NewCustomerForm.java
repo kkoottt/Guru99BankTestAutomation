@@ -27,8 +27,6 @@ public class NewCustomerForm extends ManagerHomePage{
     private final By mobileNumberFieldErrorMessage = By.xpath("//label[@id='message7']");
     private final By emailFieldErrorMessage = By.xpath("//label[@id='message9']");
     private final By passwordFieldErrorMessage = By.xpath("//label[@id='message18']");
-    private final By submitBtn = By.xpath("//input[@type='submit']");
-    private final By resetBtn = By.xpath("//input[@type='reset']");
 
     // Constructor
     public NewCustomerForm(WebDriver driver) {
