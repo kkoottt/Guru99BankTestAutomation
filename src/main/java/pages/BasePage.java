@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -50,5 +51,10 @@ public class BasePage {
 
     protected boolean isDisabled(By locator) {
         return !driver.findElement(locator).isEnabled();
+    }
+
+    public String getFirstOption(By locator) {
+        Select select = new Select(waitElement(locator));
+        return select.getOptions().getFirst().getText();
     }
 }

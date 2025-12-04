@@ -115,37 +115,18 @@ public class NewCustomerFormTests extends BaseTest {
 
     @Test
     public void resetBtnClearsAllField() {
-        newCustomerForm.enterCustomerNameField("Carlo");
-        newCustomerForm.enterDateOfBirthField("01/01/1212");
-        newCustomerForm.enterAddressField("Some address");
-        newCustomerForm.enterCityField("MyCity");
-        newCustomerForm.enterStateField("MyState");
-        newCustomerForm.enterPINField("123123");
-        newCustomerForm.enterMobileNumberField("123123123123");
-        newCustomerForm.enterEmailField("carlo@mail.org");
-        newCustomerForm.enterPasswordField("mypassword");
+        newCustomerForm.enterCustomerNameField("Carlo")
+                .enterDateOfBirthField("01/01/1212")
+                .enterAddressField("Some address")
+                .enterCityField("MyCity")
+                .enterStateField("MyState")
+                .enterPINField("123123")
+                .enterMobileNumberField("123123123123")
+                .enterEmailField("carlo@mail.org")
+                .enterPasswordField("mypassword")
+                .clickResetBtn();
 
-        newCustomerForm.clickResetBtn();
-
-        String txtCustomerName = newCustomerForm.getTextCustomerNameField();
-        String txtDateOfBirth = newCustomerForm.getTextDateOfBirthField();
-        String txtAddress = newCustomerForm.getTextAddressField();
-        String txtCity = newCustomerForm.getTextCityField();
-        String txtState = newCustomerForm.getTextStateField();
-        String txtPIN = newCustomerForm.getTextPINField();
-        String txtMobileNumber = newCustomerForm.getTextMobileNumberField();
-        String txtEmail = newCustomerForm.getTextEmailField();
-        String txtPassword = newCustomerForm.getTextPasswordField();
-
-        soft.assertEquals(txtCustomerName,"");
-        soft.assertEquals(txtDateOfBirth,"");
-        soft.assertEquals(txtAddress,"");
-        soft.assertEquals(txtCity,"");
-        soft.assertEquals(txtState,"");
-        soft.assertEquals(txtPIN,"");
-        soft.assertEquals(txtMobileNumber,"");
-        soft.assertEquals(txtEmail,"");
-        soft.assertEquals(txtPassword,"");
+        soft.assertTrue(newCustomerForm.areAllFieldsCleared());
         soft.assertAll();
     }
 }

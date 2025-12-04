@@ -189,7 +189,20 @@ public class NewCustomerForm extends ManagerHomePage{
         click(submitBtn);
     }
 
-    public void clickResetBtn() {
+    public NewCustomerForm clickResetBtn() {
         click(resetBtn);
+        return this;
+    }
+
+    public boolean areAllFieldsCleared() {
+        return getTextCustomerNameField().isEmpty() &&
+                getTextDateOfBirthField().isEmpty() &&
+                getTextAddressField().isEmpty() &&
+                getTextCityField().isEmpty() &&
+                getTextStateField().isEmpty() &&
+                getTextPINField().isEmpty() &&
+                getTextMobileNumberField().isEmpty() &&
+                getTextEmailField().isEmpty() &&
+                getTextPasswordField().isEmpty();
     }
 }
