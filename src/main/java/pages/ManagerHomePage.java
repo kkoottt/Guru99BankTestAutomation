@@ -27,8 +27,9 @@ public class ManagerHomePage extends BasePage {
     public void clickNewAccountBtn() {
         click(newAccountBtn);
     }
-    public void clickEditAccountBtn() {
+    public EditAccountForm clickEditAccountBtn() {
         click(editAccountBtn);
+        return new EditAccountForm(driver);
     }
     public void clickDeleteAccountBtn() {
         click(deleteAccountBtn);
